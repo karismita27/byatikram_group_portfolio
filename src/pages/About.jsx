@@ -1,12 +1,14 @@
 import React from "react";
 import SectionShell from "../components/site/SectionShell.jsx";
 import { units } from "../data/units.js";
+import aboutImg from "../assets/images/about.png";
+import { FaBrain, FaShieldAlt, FaBolt, FaChartLine, }from "react-icons/fa";
 
 const values = [
-  { emoji: "🧠", title: "Clarity", desc: "We simplify complexity into messaging that stakeholders understand quickly." },
-  { emoji: "🧭", title: "Integrity", desc: "Credibility is non-negotiable—facts, tone, and responsibility matter." },
-  { emoji: "⚡", title: "Responsiveness", desc: "Fast, disciplined execution with clear ownership and timelines." },
-  { emoji: "📈", title: "Outcomes", desc: "We measure progress—coverage, sentiment, and business relevance." },
+  { icon: FaBrain, title: "Clarity", desc: "We simplify complexity into messaging that stakeholders understand quickly." },
+  { icon: FaShieldAlt, title: "Integrity", desc: "Credibility is non-negotiable—facts, tone, and responsibility matter." },
+  { icon: FaBolt, title: "Responsiveness", desc: "Fast, disciplined execution with clear ownership and timelines." },
+  { icon: FaChartLine, title: "Outcomes", desc: "We measure progress—coverage, sentiment, and business relevance." },
 ];
 
 export default function About() {
@@ -62,23 +64,31 @@ export default function About() {
           </div>
 
           {/* Right: Image (placeholder) */}
-          <div className="card overflow-hidden">
-            <div className="relative h-64 sm:h-80 bg-gradient-to-br from-brand-indigo to-brand-red">
-              <div className="absolute inset-0 bg-black/10" />
-              <div className="absolute bottom-5 left-5 rounded-2xl bg-white/90 px-4 py-3">
-                <div className="text-xs font-semibold text-slate-600">Replace this with a real photo</div>
-                <div className="mt-0.5 text-sm font-semibold text-brand-indigo">
-                  Office • Team • Events <span className="text-brand-red">●</span>
-                </div>
-              </div>
-            </div>
-            <div className="p-6">
-              <h2 className="text-lg font-semibold text-brand-indigo">Brand presence</h2>
-              <p className="mt-2 text-sm text-slate-600 leading-relaxed">
-                Use a high-quality team photo, office photo, or event photo. This instantly makes the page feel premium.
-              </p>
-            </div>
-          </div>
+          
+<div className="card overflow-hidden">
+  <div
+    className="relative h-64 sm:h-80 bg-cover bg-center"
+    style={{ backgroundImage: `url(${aboutImg})` }}
+  >
+    {/* dark overlay for readability */}
+    <div className="absolute inset-0 bg-black/30" />
+
+    {/* label */}
+    <div className="absolute bottom-5 left-5 rounded-2xl bg-white/90 px-4 py-3">
+      <div className="text-xs font-semibold text-slate-600">Our work in action</div>
+      <div className="mt-0.5 text-sm font-semibold text-brand-indigo">
+        Office • Team • Events <span className="text-brand-red">●</span>
+      </div>
+    </div>
+  </div>
+
+  <div className="p-6">
+    <h2 className="text-lg font-semibold text-brand-indigo">Brand presence</h2>
+    <p className="mt-2 text-sm text-slate-600 leading-relaxed">
+      Use a high-quality team photo, office photo, or event photo. This instantly makes the page feel premium.
+    </p>
+  </div>
+</div>
         </div>
       </SectionShell>
 
@@ -95,7 +105,7 @@ export default function About() {
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {values.map((v) => (
             <div key={v.title} className="card p-6 card-hover">
-              <div className="text-3xl">{v.emoji}</div>
+              <div className="text-3xl text-brand-red"> <v.icon /></div>
               <h3 className="mt-3 text-base font-semibold text-brand-indigo">{v.title}</h3>
               <p className="mt-2 text-sm text-slate-600 leading-relaxed">{v.desc}</p>
               <div className="mt-4 h-[2px] w-10 rounded-full bg-brand-red" />
