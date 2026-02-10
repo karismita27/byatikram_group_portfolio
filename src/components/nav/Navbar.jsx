@@ -103,7 +103,7 @@ function MobileMenu() {
      
 <button
   onClick={() => setOpen((v) => !v)}
-  className="inline-flex flex-col items-center justify-center gap-1.4 h-11 w-11 rounded-xl border border-slate-200 bg-white/90 hover:bg-white transition shadow-soft"
+  className="inline-flex flex-col items-center justify-center gap-1.5 h-11 w-11 rounded-xl border border-slate-200 bg-white/90 hover:bg-white transition shadow-soft"
   aria-label="Open menu"
   aria-expanded={open}
 >
