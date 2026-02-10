@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Subtle defaults for corporate spacing/typography */
+:root{
+  color-scheme: light;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  @apply bg-brand-mist text-slate-700 antialiased;
+}
+
+.container-pad {
+  @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+
+.card {
+  @apply rounded-2xl bg-white shadow-soft ring-1 ring-slate-200/70;
+}
+
+.card-hover {
+  @apply transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-soft;
+}
+
+.section-title {
+  @apply text-brand-indigo font-semibold tracking-tight;
+}
+
+.kicker {
+  @apply text-sm font-semibold uppercase tracking-widest text-brand-red;
+}
+
+.link-underline {
+  @apply underline decoration-slate-300 underline-offset-4 hover:decoration-brand-red;
+}
+
+/* Clean focus ring */
+*:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(36, 59, 134, 0.14);
+  border-radius: 10px;
+}
+
+
+/* --- Brand balance helpers --- */
+/* Use for hero/backgrounds when you want brand presence without "too much blue" */
+.bg-indigo-mist{
+  background: radial-gradient(900px 450px at 80% 10%, rgba(36,59,134,.10), transparent 55%),
+              linear-gradient(180deg, #ffffff 0%, #F6F7FB 100%);
+}
+
+/* Softer primary button (still indigo) */
+.btn-primary-soft{
+  @apply inline-flex items-center justify-center rounded-xl px-5 py-2.5 font-semibold text-white shadow-soft;
+  background: #243B86;
+}
+.btn-primary-soft:hover{ filter: brightness(0.95); }
+
+/* Primary red button (accent CTA) */
+.btn-primary-red{
+  @apply inline-flex items-center justify-center rounded-xl px-5 py-2.5 font-semibold text-white shadow-soft;
+  background: #DC2626;
+}
+.btn-primary-red:hover{ filter: brightness(0.95); }
+
+/* Indigo outline button */
+.btn-outline-indigo{
+  @apply inline-flex items-center justify-center rounded-xl px-5 py-2.5 font-semibold;
+  color:#243B86;
+  border:1px solid rgba(36,59,134,.28);
+  background: rgba(36,59,134,.04);
+}
+.btn-outline-indigo:hover{ background: rgba(36,59,134,.07); }
+
+
+/* --- Section backgrounds --- */
+.section-soft{
+  background: linear-gradient(180deg, #ffffff 0%, #F6F7FB 100%);
+}
+.section-divider{
+  border-top: 1px solid rgba(15,23,42,0.08);
+}
+
+/* --- Card accents --- */
+.card-pro{
+  @apply relative overflow-hidden rounded-2xl bg-white shadow-soft ring-1 ring-slate-200/70;
+}
+.card-pro:before{
+  content:"";
+  position:absolute;
+  left:0; right:0; top:0;
+  height:3px;
+  background: linear-gradient(90deg, rgba(36,59,134,.55), rgba(220,38,38,.55));
+}
+.icon-pill{
+  @apply inline-flex items-center justify-center rounded-2xl ring-1 ring-slate-200/70;
+  background: rgba(36,59,134,.06);
+}
