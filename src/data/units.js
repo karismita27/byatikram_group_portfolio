@@ -8,7 +8,7 @@ export const units = [
 ];
 
 export const groupContact = {
-  email: "contact@byatikramgroup.example",
+  email: "business@byatikram.in",
   phone: "+91 00000 00000",
   address: "Head Office, Guwahati, Assam, India",
   mapEmbedUrl:

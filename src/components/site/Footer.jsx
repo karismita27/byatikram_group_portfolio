@@ -5,7 +5,7 @@ import { units } from "../../data/units.js";
 
 export default function Footer() {
   return (
-    <footer className="mt-16 bg-gradient-to-b from-red-100/90 to-white text-slate-800 border-t border-red-200">
+    <footer className="mt-16 bg-gradient-to-b from-red-300/90 to-white text-slate-800 border-t border-red-400">
       <div className="container-pad py-12">
         <div className="grid gap-10 md:grid-cols-4">
           <div className="md:col-span-2">
@@ -28,7 +28,7 @@ export default function Footer() {
               </div>
               <div className="flex items-start gap-2">
                 <Mail className="h-4 w-4 mt-0.5 text-slate-500" />
-                <span>hello@byatikramgroup.com</span>
+                <span>business@byatikram.in</span>
               </div>
             </div>
 
