@@ -4,6 +4,7 @@ import SectionShell from "../components/site/SectionShell.jsx";
 import StatPills from "../components/site/StatPills.jsx";
 import LogoPill from "../components/site/LogoPill.jsx";
 import { clients } from "../data/clients.js";
+import aboutImg from "../assets/images/about.png";
 
 const servicePreview = [
   {
@@ -129,6 +130,7 @@ export default function Home() {
       >
         
         <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
+
           <div className="card-pro p-7">
             <h3 className="text-xl font-semibold text-brand-indigo">Byatikram Group at a glance</h3>
             <p className="mt-3 text-sm text-slate-600 leading-relaxed">
@@ -152,6 +154,7 @@ export default function Home() {
                 </div>
               ))}
             </div>
+            
 
             <div className="mt-7 flex flex-col sm:flex-row gap-3">
               <NavLink to="/about" className="btn-outline-indigo">
@@ -164,19 +167,33 @@ export default function Home() {
           </div>
 
           <div className="card-pro overflow-hidden">
-            <div className="relative aspect-[16/11] bg-gradient-to-br from-slate-950 via-brand-indigo to-slate-900">
-              <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,.35),transparent_45%),radial-gradient(circle_at_80%_25%,rgba(220,38,38,.25),transparent_50%)]" />
-              <div className="absolute bottom-0 left-0 right-0 p-6">
-                <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-xs font-semibold text-white/90 ring-1 ring-white/10 backdrop-blur">
-                  <span className="h-2 w-2 rounded-full bg-brand-red" />
-                  Credibility • Consistency • Delivery
-                </div>
-                <h4 className="mt-3 text-xl font-semibold text-white">A partner built for public trust</h4>
-                <p className="mt-2 text-sm text-white/75 max-w-md">
-                  Clean communication, disciplined execution, and stakeholder-ready outputs—across media, events, and digital.
-                </p>
-              </div>
-            </div>
+            
+<div
+  className="relative aspect-[16/11] bg-cover bg-center"
+  style={{ backgroundImage: `url(${aboutImg})` }}
+>
+  {/* dark overlay */}
+  <div className="absolute inset-0 bg-slate-950/50"></div>
+
+  {/* subtle light texture (optional) */}
+  <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,.15),transparent_40%)]"></div>
+
+  {/* CONTENT — MUST be relative + z */}
+  <div className="relative z-10 absolute bottom-0 left-0 right-0 p-6 text-white">
+    <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold">
+      <span className="h-2 w-2 rounded-full bg-brand-red"></span>
+      Credibility · Consistency · Delivery
+    </div>
+
+    <h4 className="mt-3 text-xl font-semibold">
+      A partner built for public trust
+    </h4>
+
+    <p className="mt-2 text-sm text-white/80 max-w-md">
+      Clean communication, disciplined execution, and stakeholder-ready outputs—across media, events, and digital.
+    </p>
+  </div>
+</div>
             <div className="p-6 bg-white">
               <div className="grid gap-3 sm:grid-cols-3 text-sm">
                 <div className="rounded-2xl bg-brand-mist p-4 ring-1 ring-slate-200/70">
