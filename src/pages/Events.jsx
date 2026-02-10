@@ -16,7 +16,7 @@ const upcoming = [
       "A magical live concert featuring soulful melodies, live orchestra, and special performances.",
     tag: "Concert",
     img: "https://placehold.co/600x400/png?text=Concert+Poster",
-    bookingUrl: null, // admin will add later
+    bookingUrl: "/contact", // admin can change later
   },
 ];
 
@@ -151,7 +151,11 @@ export default function Events() {
             >
               {/* Image */}
               <div className="aspect-[4/3] rounded-xl overflow-hidden bg-slate-100 ring-1 ring-slate-200">
-                <img src={e.img} alt={e.title} className="h-full w-full object-cover" />
+                <img
+                  src={e.img}
+                  alt={e.title}
+                  className="h-full w-full object-cover"
+                />
               </div>
 
               {/* Details */}
@@ -160,8 +164,12 @@ export default function Events() {
                   <DatePill date={e.date} />
                   <TagPill tag={e.tag} />
                 </div>
-                <div className="mt-2 font-semibold text-brand-indigo">{e.title}</div>
-                <div className="mt-1 text-sm text-slate-600">{e.note}</div>
+                <div className="mt-2 font-semibold text-brand-indigo">
+                  {e.title}
+                </div>
+                <div className="mt-1 text-sm text-slate-600">
+                  {e.note}
+                </div>
               </div>
 
               {/* Location + CTA */}
@@ -172,19 +180,20 @@ export default function Events() {
                 <div className="mt-1">{e.place}</div>
 
                 <div className="mt-4">
-                  
-<a
-  href={e.bookingUrl || "#"}
-  onClick={(e) => {
-    if (!e.bookingUrl) {
-      e.preventDefault();
-      alert("Ticket booking will be available soon.");
-    }
-  }}
-  className="inline-flex items-center justify-center rounded-xl bg-brand-red px-4 py-2 text-xs font-semibold text-white hover:opacity-90 transition"
->
-  Book Tickets
-</a>
+                  {tab === "upcoming" && (
+                    <a
+                      href={e.bookingUrl}
+                      className="inline-flex items-center justify-center rounded-xl bg-brand-red px-4 py-2 text-xs font-semibold text-white hover:opacity-90 transition"
+                    >
+                      Book Tickets
+                    </a>
+                  )}
+
+                  {tab === "past" && (
+                    <span className="text-xs font-semibold text-slate-400">
+                      Event concluded
+                    </span>
+                  )}
                 </div>
               </div>
             </div>
@@ -234,7 +243,9 @@ export default function Events() {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="p-4 flex justify-between items-center border-b">
-              <span className="font-semibold text-brand-indigo">Event Gallery</span>
+              <span className="font-semibold text-brand-indigo">
+                Event Gallery
+              </span>
               <button onClick={() => setOpen(null)}>
                 <X />
               </button>
