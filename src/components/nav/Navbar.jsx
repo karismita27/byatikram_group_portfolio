@@ -100,16 +100,17 @@ function MobileMenu() {
 
   return (
     <div className="relative z-40">
-      <button
-        onClick={() => setOpen((v) => !v)}
-        className="inline-flex items-center justify-center h-11 w-11 rounded-xl border border-slate-200 bg-white/90 hover:bg-white transition shadow-soft"
-        aria-label="Open menu"
-        aria-expanded={open}
-      >
-        <span className="block h-0.5 w-5 bg-slate-700 rounded" />
-        <span className="block h-0.5 w-5 bg-slate-700 rounded mt-1.5" />
-        <span className="block h-0.5 w-5 bg-slate-700 rounded mt-1.5" />
-      </button>
+     
+<button
+  onClick={() => setOpen((v) => !v)}
+  className="inline-flex flex-col items-center justify-center gap-1.2 h-11 w-11 rounded-xl border border-slate-200 bg-white/90 hover:bg-white transition shadow-soft"
+  aria-label="Open menu"
+  aria-expanded={open}
+>
+  <span className="block h-0.5 w-5 bg-slate-700 rounded" />
+  <span className="block h-0.5 w-5 bg-slate-700 rounded" />
+  <span className="block h-0.5 w-5 bg-slate-700 rounded" />
+</button>
 
       {open && (
         <div className="absolute right-0 mt-2 w-64 card p-2 z-50" role="menu" aria-label="Site navigation">
