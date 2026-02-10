@@ -165,7 +165,6 @@ export default function About() {
               </div>
               <div className="mt-4 flex items-center justify-between">
                 <div className="text-xs text-slate-500">Logo placeholder</div>
-                <div className="text-xs font-semibold text-brand-red">Update assets</div>
               </div>
             </div>
           ))}
