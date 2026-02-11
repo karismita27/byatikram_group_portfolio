@@ -39,7 +39,7 @@ export default function Home() {
         <div className="absolute -top-24 -right-24 h-72 w-72 rounded-full bg-brand-red/10 blur-3xl" />
         <div className="absolute -bottom-28 -left-28 h-80 w-80 rounded-full bg-brand-indigo/10 blur-3xl" />
 
-        <div className="container-pad relative pt-20 pb-14 sm:pt-24 sm:pb-20">
+        <div className="container-pad relative pt-20 pb-14 sm:pt-16 sm:pb-20">
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <div>
               <div className="inline-flex items-center gap-2 rounded-full bg-white/80 backdrop-blur px-4 py-2 ring-1 ring-slate-200/70 text-xs font-semibold text-slate-700">
@@ -324,23 +324,35 @@ export default function Home() {
 
       {/* CLIENT LOGOS PREVIEW (upgraded) */}
       <SectionShell
-        id="clients-preview"
-        kicker="Trust"
-        title={
-          <span>
-            Clients & partners <span className="text-brand-red">•</span>
-          </span>
-        }
-        subtitle="Logo-only grid, equal sizing, clean hover—professional and uncluttered."
-      >
-        <div className="card p-6 sm:p-7">
-          <div className="grid gap-3 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
-            {clients.map((c) => (
-              <LogoPill key={c.name} text={c.logoText} title={c.name} />
-            ))}
-          </div>
+  id="clients-preview"
+  kicker="Trust"
+  title={
+    <>
+      Clients & Partners <span className="text-brand-red">•</span>
+    </>
+  }
+  subtitle="Logo-only grid, equal sizing, clean hover—professional and uncluttered."
+>
+  <div className="card p-6 sm:p-7">
+    <div className="grid gap-6 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+      
+      {clients.map((c) => (
+        <div
+          key={c.name}
+          className="flex items-center justify-center bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition"
+        >
+          <img
+            src={c.logo}
+            alt={c.name}
+            className="h-12 w-auto object-contain transition duration-300"
+          />
         </div>
-      </SectionShell>
+      ))}
+
+    </div>
+  </div>
+</SectionShell>
+
     </div>
   );
 }
