@@ -15,7 +15,7 @@ const nav = [
 function Logo() {
   return (
     <div className="flex items-center">
-      <img src= {mainLogo} alt="Byatikram Group Logo" className="w-28 h-auto"/>
+      <img src= {mainLogo} alt="Byatikram Group Logo" className="w-24 h-auto"/>
       </div>
   );
 }
