@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import SearchBar from "./SearchBar.jsx";
+import mainLogo from "../../assets/images/main_logo.png";
 
 const nav = [
   { label: "Home", to: "/" },
@@ -13,15 +14,9 @@ const nav = [
 
 function Logo() {
   return (
-    <div className="flex items-center gap-3 min-w-0">
-      <div className="h-10 w-10 rounded-2xl bg-brand-indigo text-white grid place-items-center font-bold shadow-soft">
-        B
+    <div className="flex items-center">
+      <img src= {mainLogo} alt="Byatikram Group Logo" className="h-14 w-auto"/>
       </div>
-      <div className="leading-tight min-w-0">
-        <div className="text-sm font-semibold text-brand-ink truncate">Byatikram Group</div>
-        <div className="text-xs text-slate-500 truncate">Corporate / Public Relations</div>
-      </div>
-    </div>
   );
 }
 
