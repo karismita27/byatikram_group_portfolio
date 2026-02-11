@@ -275,52 +275,72 @@ export default function Home() {
         </div>
       </SectionShell>
 
-      {/* FOUNDER / VIDEO */}
-      <SectionShell
-        id="founder"
-        kicker="Leadership"
-        title={
-          <span>
-            Founder / Patron-in-Chief <span className="text-brand-red">video</span>
-          </span>
-        }
-        subtitle="You can use YouTube now and later replace it with a storage (MP4) link—no layout changes needed."
-      >
-        <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
-          <div className="card overflow-hidden">
-            <div className="aspect-video bg-gradient-to-br from-slate-900 to-brand-indigo grid place-items-center text-white">
-              <div className="text-center px-6">
-                <div className="text-sm opacity-80">Video Placeholder</div>
-                <div className="mt-2 text-lg font-semibold">Founder Message</div>
-                <div className="mt-1 text-sm opacity-80">Replace with YouTube embed or MP4</div>
-              </div>
-            </div>
-            <div className="p-6">
-              <h3 className="text-lg font-semibold text-brand-indigo">Why our approach works</h3>
-              <p className="mt-2 text-sm text-slate-600 leading-relaxed">
-                We prioritize credibility, consistency, and stakeholder-friendly communication—so brands earn long-term trust.
-              </p>
-            </div>
-          </div>
-
-          <div className="card p-7">
-            <h3 className="text-xl font-semibold text-brand-indigo">What clients experience</h3>
-            <ul className="mt-4 space-y-3 text-sm text-slate-600">
-              {[
-                "Clear communication and milestone-based delivery",
-                "Media-ready documentation and verified information",
-                "Operational reliability for events and campaigns",
-                "Reporting, learning, and post-delivery wrap-ups",
-              ].map((x) => (
-                <li key={x} className="flex items-start gap-2">
-                  <span className="mt-2 h-2 w-2 rounded-full bg-brand-red" />
-                  <span>{x}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+      
+{/* FOUNDER / VIDEO — Leadership highlight (Home) */}
+<SectionShell
+  id="founder"
+  kicker="Leadership"
+  title={
+    <span>
+      From the Founder <span className="text-brand-red">•</span> Our commitment
+    </span>
+  }
+  subtitle="A short leadership note on our standards of credibility, delivery, and stakeholder trust."
+  className="section-soft"
+>
+  <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
+    {/* Video + short excerpt */}
+    <div className="card overflow-hidden">
+      <div className="aspect-video bg-gradient-to-br from-slate-900 to-brand-indigo grid place-items-center text-white">
+        <div className="text-center px-6">
+          <div className="text-sm opacity-80">Video Placeholder</div>
+          <div className="mt-2 text-lg font-semibold">Founder Address</div>
+          <div className="mt-1 text-sm opacity-80">Replace with YouTube embed or MP4</div>
         </div>
-      </SectionShell>
+      </div>
+
+      <div className="p-6">
+        <h3 className="text-lg font-semibold text-brand-indigo">Leadership, not marketing</h3>
+        <p className="mt-2 text-sm text-slate-600 leading-relaxed">
+          We lead with clarity and verification—because reputations are built on disciplined communication,
+          consistent execution, and stakeholder-ready proof.
+        </p>
+
+        <div className="mt-5 flex flex-col sm:flex-row gap-3">
+          <NavLink to="/about#founder-message" className="inline-flex items-center justify-center rounded-2xl bg-brand-red text-white px-6 py-3 text-sm font-semibold hover:opacity-95 transition">
+            Read the Founder’s Message
+          </NavLink>
+          <NavLink to="/contact"  className="inline-flex items-center justify-center rounded-2xl bg-white ring-1 ring-slate-200 px-6 py-3 text-sm font-semibold text-brand-indigo hover:bg-slate-50 transition">
+            Work with us
+          </NavLink>
+        </div>
+      </div>
+    </div>
+
+    {/* What clients experience (keep as credibility proof) */}
+    <div className="card p-7">
+      <h3 className="text-lg font-semibold text-brand-indigo">What clients experience</h3>
+      <ul className="mt-4 space-y-3 text-sm text-slate-600">
+        {[
+          "Clear communication and milestone-based delivery",
+          "Media-ready documentation and verified information",
+          "Operational reliability for events and campaigns",
+          "Reporting, learning, and post-delivery wrap-ups",
+        ].map((x) => (
+          <li key={x} className="flex items-start gap-2">
+            <span className="mt-2 h-2 w-2 rounded-full bg-brand-red" />
+            <span>{x}</span>
+          </li>
+        ))}
+      </ul>
+
+      <div className="mt-6 text-xs text-slate-500">
+        This is a highlight. The full letter-style Founder’s Message lives on the About page.
+      </div>
+    </div>
+  </div>
+</SectionShell>
+
 
       {/* CLIENT LOGOS PREVIEW (upgraded) */}
       <SectionShell
