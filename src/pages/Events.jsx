@@ -16,7 +16,18 @@ const upcoming = [
       "A magical live concert featuring soulful melodies, live orchestra, and special performances.",
     tag: "Concert",
     img: "https://placehold.co/600x400/png?text=Concert+Poster",
-    bookingUrl: "/contact", // admin can change later
+    hasTickets: true,
+    bookingUrl: "/contact", // admin can update later
+  },
+  {
+    date: "2026-05-12",
+    title: "Corporate Leadership Meet",
+    place: "Assam",
+    note:
+      "Closed-door leadership and stakeholder interaction focused on strategy and growth.",
+    tag: "Conference",
+    img: "https://placehold.co/600x400/png?text=Conference",
+    hasTickets: false, // no public tickets
   },
 ];
 
@@ -25,7 +36,7 @@ const past = [
     date: "2025-10-14",
     title: "Brand Activation",
     place: "Guwahati",
-    note: "Campaign execution + media follow-up.",
+    note: "Campaign execution with media engagement and follow-up.",
     tag: "Activation",
     img: "https://placehold.co/600x400/png?text=Brand+Activation",
   },
@@ -33,7 +44,7 @@ const past = [
     date: "2025-09-02",
     title: "Press Conference",
     place: "Assam",
-    note: "Press note, Q&A, and coverage tracking.",
+    note: "Press briefing, Q&A, and coverage tracking.",
     tag: "Press",
     img: "https://placehold.co/600x400/png?text=Press+Conference",
   },
@@ -180,13 +191,19 @@ export default function Events() {
                 <div className="mt-1">{e.place}</div>
 
                 <div className="mt-4">
-                  {tab === "upcoming" && (
+                  {tab === "upcoming" && e.hasTickets && (
                     <a
                       href={e.bookingUrl}
                       className="inline-flex items-center justify-center rounded-xl bg-brand-red px-4 py-2 text-xs font-semibold text-white hover:opacity-90 transition"
                     >
                       Book Tickets
                     </a>
+                  )}
+
+                  {tab === "upcoming" && !e.hasTickets && (
+                    <span className="text-xs font-semibold text-slate-400">
+                      Entry by invitation only
+                    </span>
                   )}
 
                   {tab === "past" && (
