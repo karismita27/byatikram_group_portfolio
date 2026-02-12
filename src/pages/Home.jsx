@@ -5,6 +5,26 @@ import StatPills from "../components/site/StatPills.jsx";
 import LogoPill from "../components/site/LogoPill.jsx";
 import { clients } from "../data/clients.js";
 import aboutImg from "../assets/images/about.png";
+import eh1 from "../assets/images/events/p-1.jpg";
+import eh2 from "../assets/images/events/p-2.jpg";
+import eh3 from "../assets/images/events/p13.jpg";
+import eh4 from "../assets/images/events/p-17.jpg";
+import eh5 from "../assets/images/events/p-24.jpg";
+import eh6 from "../assets/images/events/p-26.jpg";
+import eh7 from "../assets/images/events/p-30.jpg";
+import eh8 from "../assets/images/events/p-35.jpg";
+
+const eventHighlightsTeaser = [
+  { src: eh1, alt: "Press briefing setup", meta: "Media • Guwahati • 2025" },
+  { src: eh2, alt: "Stage and backdrop branding", meta: "Event Delivery • 2025" },
+  { src: eh3, alt: "Audience and venue view", meta: "Conference • 2024" },
+  { src: eh4, alt: "On-ground coordination", meta: "Operations • 2025" },
+  { src: eh5, alt: "Stakeholder interaction", meta: "Engagement • 2024" },
+  { src: eh6, alt: "Speaker moment on stage", meta: "Program • 2025" },
+  { src: eh7, alt: "Branding wall and media corner", meta: "PR • 2024" },
+  { src: eh8, alt: "Team execution moment", meta: "Delivery • 2025" },
+];
+
 
 const servicePreview = [
   {
@@ -274,6 +294,111 @@ export default function Home() {
           </NavLink>
         </div>
       </SectionShell>
+
+
+
+{/* EVENT HIGHLIGHTS TEASER (Home) */}
+<SectionShell
+  id="events-teaser"
+  kicker="Proof"
+  title={
+    <span>
+      Event Highlights <span className="text-brand-red">•</span> On-ground delivery
+    </span>
+  }
+  subtitle="A curated glimpse of recent engagements—execution moments that build stakeholder confidence."
+  className="section-soft"
+>
+  <div className="grid gap-8 lg:grid-cols-12 lg:items-start">
+    {/* Left: Copy + CTA */}
+    <div className="lg:col-span-4">
+      <div className="card-pro p-7">
+        <h3 className="text-lg font-semibold text-brand-indigo">
+          Professional delivery, documented
+        </h3>
+        <p className="mt-2 text-sm text-slate-600 leading-relaxed">
+          We maintain a high standard of on-ground execution—coordination, production,
+          media readiness, and post-event wrap-ups.
+        </p>
+
+        <ul className="mt-4 space-y-2 text-sm text-slate-600">
+          {[
+            "Venue & production readiness",
+            "Media-facing backdrops and documentation",
+            "Stakeholder coordination and control",
+            "Clean post-event reporting",
+          ].map((x) => (
+            <li key={x} className="flex items-start gap-2">
+              <span className="mt-2 h-2 w-2 rounded-full bg-brand-red" />
+              <span>{x}</span>
+            </li>
+          ))}
+        </ul>
+
+        <div className="mt-6 flex flex-col sm:flex-row gap-3">
+          <NavLink to="/events" className="btn-primary-red">
+            View Events & Gallery
+          </NavLink>
+          <NavLink to="/contact" className="btn-outline-indigo">
+            Plan an event
+          </NavLink>
+        </div>
+
+        <div className="mt-5 text-xs text-slate-500">
+          Curated highlights—full gallery available on the Events page.
+        </div>
+      </div>
+    </div>
+
+    {/* Right: Premium grid */}
+    <div className="lg:col-span-8">
+      <div className="card-pro p-5 sm:p-6">
+        <div className="grid grid-cols-2 gap-3 sm:gap-4 sm:grid-cols-4">
+          {eventHighlightsTeaser.map((img, idx) => (
+            <NavLink
+              key={img.src}
+              to="/events"
+              className={[
+                "group relative overflow-hidden rounded-2xl ring-1 ring-slate-200/70 bg-white",
+                // Featured tile on desktop (premium look)
+                idx === 0 ? "sm:col-span-2 sm:row-span-2" : "",
+              ].join(" ")}
+              aria-label="Open Events & Gallery"
+            >
+              <div className={idx === 0 ? "aspect-[16/11]" : "aspect-[4/3]"}>
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  className="h-full w-full object-cover transition duration-300 group-hover:scale-[1.02]"
+                  loading="lazy"
+                />
+              </div>
+
+              {/* Overlay meta */}
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/55 via-slate-950/0 to-transparent opacity-90" />
+              <div className="absolute bottom-0 left-0 right-0 p-3">
+                <div className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur px-2.5 py-1 text-[11px] font-semibold text-white">
+                  <span className="h-2 w-2 rounded-full bg-brand-red" />
+                  {img.meta}
+                </div>
+              </div>
+            </NavLink>
+          ))}
+        </div>
+
+        <div className="mt-5 flex items-center justify-between">
+          <div className="text-xs text-slate-500">
+            Visit Events to view full highlights and past engagements.
+          </div>
+          <NavLink to="/events" className="text-sm font-semibold text-brand-indigo link-underline">
+            Explore Events →
+          </NavLink>
+        </div>
+      </div>
+    </div>
+  </div>
+</SectionShell>
+
 
       
 {/* FOUNDER / VIDEO — Leadership highlight (Home) */}
