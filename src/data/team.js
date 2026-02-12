@@ -1,7 +1,7 @@
 
 
 export const team = [
-  { name: "Dr. Saumen Bharatiya", role: "Patron in Chief" },
+  { name: "Dr. Saumen Bharatiya", role: "Patron in Chief, Byatikram Group" },
   { name: "Kaveri Sharma Boruah", role: "Chief Public Relation Officer" },
   { name: "Pinky Das", role: "PR & Business Communications" },
   { name: "Madhabi Mukherjee", role: "Accounts Executive" },
