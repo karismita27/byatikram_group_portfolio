@@ -3,6 +3,7 @@ import SectionShell from "../components/site/SectionShell.jsx";
 import { units } from "../data/units.js";
 import aboutImg from "../assets/images/about.png";
 import { FaBrain, FaShieldAlt, FaBolt, FaChartLine, }from "react-icons/fa";
+import { team } from "../data/team.js";
 
 const values = [
   { icon: FaBrain, title: "Clarity", desc: "We simplify complexity into messaging that stakeholders understand quickly." },
@@ -270,6 +271,40 @@ export default function About() {
         </div>
       </details>
     </div>
+  </div>
+</SectionShell>
+
+
+{/* TEAM MEMBERS */}
+<SectionShell
+  kicker="People"
+  title={
+    <span>
+      Meet the <span className="text-brand-red">team</span>
+    </span>
+  }
+  subtitle="The people behind execution, coordination, media relations, and creative delivery."
+>
+  <div className="grid gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+    {team.map((member) => (
+      <div key={member.name} className="card p-6 text-center card-hover">
+       
+        {/* Avatar fallback */}
+        <div className="mx-auto h-16 w-16 rounded-full bg-brand-mist flex items-center justify-center text-lg font-bold text-brand-indigo">
+          {member.name.split(" ").map(n => n[0]).slice(0,2).join("")}
+        </div>
+
+        <h3 className="mt-4 text-base font-semibold text-brand-indigo">
+          {member.name}
+        </h3>
+
+        <p className="mt-1 text-sm text-slate-600">
+          {member.role}
+        </p>
+
+        <div className="mt-3 h-[2px] w-8 bg-brand-red mx-auto rounded-full"/>
+      </div>
+    ))}
   </div>
 </SectionShell>
 
