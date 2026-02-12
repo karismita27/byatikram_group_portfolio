@@ -329,7 +329,7 @@ export default function About() {
         kicker="Our Units"
         title={
           <span>
-            Group <span className="text-brand-red">units</span>
+            Byatikram's <span className="text-brand-red">subsidiaries</span>
           </span>
         }
         subtitle="Replace placeholder logos with real unit logos for a more premium look."
@@ -337,18 +337,28 @@ export default function About() {
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {units.map((u) => (
             <div key={u.name} className="card p-6 card-hover">
-              <div className="flex items-start gap-4">
-                <div className="h-12 w-12 rounded-2xl bg-brand-mist ring-1 ring-slate-200 grid place-items-center font-bold text-slate-700">
-                  {u.logoText}
-                </div>
-                <div>
-                  <h3 className="text-base font-semibold text-brand-indigo">{u.name}</h3>
-                  <p className="mt-1 text-sm text-slate-600">{u.address}</p>
-                </div>
-              </div>
-              <div className="mt-4 flex items-center justify-between">
-                <div className="text-xs text-slate-500">Logo placeholder</div>
-              </div>
+              
+<div className="flex items-start gap-4">
+  <div className="h-14 w-14 rounded-xl bg-white ring-1 ring-slate-200 flex items-center justify-center overflow-hidden">
+    {u.logoSrc ? (
+      <img
+        src={u.logoSrc}
+        alt={u.name}
+        className="w-full h-full object-contain p-1"
+      />
+    ) : (
+      <span className="font-bold text-slate-700">
+        {u.logoText}
+      </span>
+    )}
+  </div>
+
+  <div>
+    <h3 className="text-base font-semibold text-brand-indigo">{u.name}</h3>
+    <p className="mt-1 text-sm text-slate-600">{u.address}</p>
+  </div>
+</div>
+              
             </div>
           ))}
         </div>

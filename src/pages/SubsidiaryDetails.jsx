@@ -63,30 +63,7 @@ export default function SubsidiaryDetail() {
               </div>
             </div>
 
-            <div className="mt-8 grid gap-4 sm:grid-cols-3">
-              <div className="card p-5">
-                <div className="text-xs font-semibold text-slate-500 tracking-widest">LOCATION</div>
-                <div className="mt-2 text-sm font-semibold text-slate-800">{unit.address}</div>
-              </div>
-              <div className="card p-5">
-                <div className="text-xs font-semibold text-slate-500 tracking-widest">CONTACT</div>
-                <div className="mt-2 text-sm text-slate-700">
-                  <div className="font-semibold">{unit.email}</div>
-                  <div className="mt-1">{unit.phone}</div>
-                </div>
-              </div>
-              <div className="card p-5">
-                <div className="text-xs font-semibold text-slate-500 tracking-widest">MAP</div>
-                <a
-                  className="mt-2 inline-flex text-sm font-semibold text-brand-indigo link-underline"
-                  href={unit.maps}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  View location
-                </a>
-              </div>
-            </div>
+            
 
             {/* mobile back */}
             <div className="mt-6 sm:hidden">

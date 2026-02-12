@@ -18,13 +18,19 @@ import img2 from "../assets/images/client-logos/incredible-india.png";
 import img3 from "../assets/images/client-logos/big-fm-92.png";
 import img4 from "../assets/images/client-logos/aurus-mall.jpg";
 
+import ba from "../assets/images/bharatiya_associates.png";
+import bm from "../assets/images/byatikram_masdo.png";
+import ma from "../assets/images/meraki_associates.png";
+import lc from "../assets/images/lions_club.png";
+import ne from "../assets/images/ne_global_ventures.png";
+
 export const units = [
   {
     slug: "bharatiya-associates",
     name: "Bharatiya Associates",
     legalName: "Bharatiya Associates",
     logoText: "BA",
-    logoSrc: null,
+    logoSrc: ba,
     shortDescription:
       "Public affairs and stakeholder communications practice supporting institutions, industry bodies, and mission-led programs.",
     description:
@@ -53,7 +59,7 @@ export const units = [
     name: "BMASDO",
     legalName: "BMASDO",
     logoText: "BM",
-    logoSrc: null,
+    logoSrc: bm,
     shortDescription:
       "Program delivery and on-ground operations unit for conferences, public events, and coordinated launches.",
     description:
@@ -111,7 +117,7 @@ export const units = [
     name: "MERAKI Associates",
     legalName: "MERAKI Associates",
     logoText: "MA",
-    logoSrc: null,
+    logoSrc: ma,
     shortDescription:
       "Advisory and communications strategy unit supporting leadership positioning, narrative clarity, and governance-ready documentation.",
     description:
@@ -140,7 +146,7 @@ export const units = [
     name: "Lions Club of Guwahati Byatikram",
     legalName: "Lions Club of Guwahati Byatikram",
     logoText: "LC",
-    logoSrc: null,
+    logoSrc: lc,
     shortDescription:
       "Community engagement and social initiatives division coordinating outreach, partnerships, and local impact programs.",
     description:
@@ -169,7 +175,7 @@ export const units = [
     name: "North East Global Ventures",
     legalName: "North East Global Ventures",
     logoText: "NE",
-    logoSrc: null,
+    logoSrc: ne,
     shortDescription:
       "Partnership and venture support unit working on strategic collaborations, institutional programs, and growth initiatives.",
     description:
