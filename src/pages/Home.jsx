@@ -15,7 +15,7 @@ import eh7 from "../assets/images/events/p-30.jpg";
 import eh8 from "../assets/images/events/p-35.jpg";
 
 const eventHighlightsTeaser = [
-  { src: eh1, alt: "Press briefing setup", meta: "Media • Guwahati • 2025" },
+  { src: eh1, alt: "Press briefing setup", meta: "Media • 2025" },
   { src: eh2, alt: "Stage and backdrop branding", meta: "Event Delivery • 2025" },
   { src: eh3, alt: "Audience and venue view", meta: "Conference • 2024" },
   { src: eh4, alt: "On-ground coordination", meta: "Operations • 2025" },
@@ -355,34 +355,42 @@ export default function Home() {
       <div className="card-pro p-5 sm:p-6">
         <div className="grid grid-cols-2 gap-3 sm:gap-4 sm:grid-cols-4">
           {eventHighlightsTeaser.map((img, idx) => (
-            <NavLink
-              key={img.src}
-              to="/events"
-              className={[
-                "group relative overflow-hidden rounded-2xl ring-1 ring-slate-200/70 bg-white",
-                // Featured tile on desktop (premium look)
-                idx === 0 ? "sm:col-span-2 sm:row-span-2" : "",
-              ].join(" ")}
-              aria-label="Open Events & Gallery"
-            >
-              <div className={idx === 0 ? "aspect-[16/11]" : "aspect-[4/3]"}>
-                <img
-                  src={img.src}
-                  alt={img.alt}
-                  className="h-full w-full object-cover transition duration-300 group-hover:scale-[1.02]"
-                  loading="lazy"
-                />
-              </div>
+            
+<NavLink
+  key={img.src}
+  to="/events"
+  className={[
+    "group relative overflow-hidden rounded-2xl ring-1 ring-slate-200/70 bg-white",
+    idx === 0 ? "sm:col-span-2 sm:row-span-2" : "",
+  ].join(" ")}
+  aria-label="Open Events & Gallery"
+>
+  <div className={idx === 0 ? "aspect-[16/11]" : "aspect-[4/3]"}>
+    <img
+      src={img.src}
+      alt={img.alt}
+      className="h-full w-full object-cover object-center transition duration-300 group-hover:scale-[1.02]"
+      loading="lazy"
+    />
+  </div>
 
-              {/* Overlay meta */}
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/55 via-slate-950/0 to-transparent opacity-90" />
-              <div className="absolute bottom-0 left-0 right-0 p-3">
-                <div className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur px-2.5 py-1 text-[11px] font-semibold text-white">
-                  <span className="h-2 w-2 rounded-full bg-brand-red" />
-                  {img.meta}
-                </div>
-              </div>
-            </NavLink>
+  {/* subtle gradient only at bottom (does NOT hide photo) */}
+  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/55 via-slate-950/0 to-transparent opacity-90" />
+
+  {/* compact badge (mobile safe) */}
+  <div className="pointer-events-none absolute bottom-2 left-2 right-2 flex items-end justify-between gap-2">
+    <div className="inline-flex items-center gap-2 rounded-full bg-slate-950/40 backdrop-blur-sm px-2.5 py-1 text-[10px] font-semibold text-white max-w-full">
+      <span className="h-2 w-2 rounded-full bg-brand-red shrink-0" />
+      <span className="truncate">{img.meta}</span>
+    </div>
+
+    {/* optional: small “View” cue (looks premium) */}
+    <div className="hidden sm:inline-flex rounded-full bg-white/10 backdrop-blur-sm px-2.5 py-1 text-[10px] font-semibold text-white">
+      View
+    </div>
+  </div>
+</NavLink>
+
           ))}
         </div>
 
