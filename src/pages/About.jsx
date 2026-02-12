@@ -1,7 +1,7 @@
 import React from "react";
 import SectionShell from "../components/site/SectionShell.jsx";
 import { units } from "../data/units.js";
-import aboutImg from "../assets/images/about.png";
+import aboutImg from "../assets/images/events/p-1.jpg";
 import { FaBrain, FaShieldAlt, FaBolt, FaChartLine, }from "react-icons/fa";
 import { team } from "../data/team.js";
 

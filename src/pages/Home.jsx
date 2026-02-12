@@ -4,7 +4,7 @@ import SectionShell from "../components/site/SectionShell.jsx";
 import StatPills from "../components/site/StatPills.jsx";
 import LogoPill from "../components/site/LogoPill.jsx";
 import { clients } from "../data/clients.js";
-import aboutImg from "../assets/images/about.png";
+import aboutImg from "../assets/images/events/p-1.jpg";
 import eh1 from "../assets/images/events/p-1.jpg";
 import eh2 from "../assets/images/events/p-2.jpg";
 import eh3 from "../assets/images/events/p13.jpg";
