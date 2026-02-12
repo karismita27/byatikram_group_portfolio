@@ -45,7 +45,8 @@ function SubsidiaryCard({ u }) {
         <div className="text-xs text-slate-500">{u.address}</div>
         <Link
           to={`/subsidiaries/${u.slug}`}
-          className="btn-outline-indigo text-sm"
+          className="text-sm font-medium bg-brand-red text-white px-4 py-2 rounded-xl hover:bg-red-700 active:scale-95 transition-all duration-200"
+
           aria-label={`Read full profile for ${u.name}`}
         >
           Read Full

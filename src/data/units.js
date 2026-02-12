@@ -61,9 +61,9 @@ export const units = [
     logoText: "BM",
     logoSrc: bm,
     shortDescription:
-      "Program delivery and on-ground operations unit for conferences, public events, and coordinated launches.",
+      "Program delivery and on-ground operations unit for conferences, public events, and and coordinated launches.",
     description:
-      "BMASDO is the group’s execution and operations division. It manages on-ground delivery across conferences, public events, and multi-stakeholder programs. The unit works through disciplined runbooks—scope control, vendor management, timing, guest protocol, and contingency planning—so delivery remains consistent even under pressure. Post-event, BMASDO compiles structured documentation and operational learnings for internal governance and future iterations.",
+      "BMASDO is the group’s execution and operations division. It manages on-ground delivery across conferences, events, and multi-stakeholder programs. The unit works through disciplined runbooks—scope control, vendor management, timing, guest protocol, and contingency planning—so delivery remains consistent even under pressure. Post-event, BMASDO compiles structured documentation and operational learnings for internal governance and future iterations.",
     services: [
       "Event operations and production management",
       "Vendor coordination and procurement oversight",
