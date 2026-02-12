@@ -12,7 +12,7 @@ export default function Contact() {
   function onSubmit(e) {
     e.preventDefault();
     setSubmitted(true);
-    // Frontend-only: replace with real submission (email API / server) when needed.
+    
     setTimeout(() => setSubmitted(false), 3500);
     setName("");
     setEmail("");

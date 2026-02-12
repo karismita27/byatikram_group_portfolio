@@ -155,7 +155,7 @@ export default function Services() {
         </div>
       </SectionShell>
 
-      {/* WORK THAT BUILDS TRUST (moved from Work page) */}
+      {/* WORK THAT BUILDS TRUST  */}
       <SectionShell
         id="delivery"
         kicker="Delivery"
@@ -225,7 +225,7 @@ export default function Services() {
         </div>
       </SectionShell>
 
-      {/* CLIENT TESTIMONIALS (moved from Work page) */}
+      {/* CLIENT TESTIMONIALS */}
       <SectionShell
         id="testimonials"
         kicker="Testimonials"

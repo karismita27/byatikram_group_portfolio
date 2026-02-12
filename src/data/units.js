@@ -1,18 +1,8 @@
 
-/**
-* Group subsidiaries / units data
-* - Add new subsidiaries by appending a new object to `units`
-* - `slug` must be unique and URL-safe (used for /subsidiaries/:slug)
-* - `logoSrc` is optional; if not provided, UI falls back to `logoText` (or initials)
-*
-* Notes:
-* - Contact page/footer may also read from here, so keep address/email/phone/maps present.
-*/
 
 import aboutImg from "../assets/images/about.png";
 import mainLogo from "../assets/images/main_logo.png";
 
-// Optional placeholder gallery images (replace with real subsidiary assets)
 import img1 from "../assets/images/client-logos/awesome-assam.png";
 import img2 from "../assets/images/client-logos/incredible-india.png";
 import img3 from "../assets/images/client-logos/big-fm-92.png";

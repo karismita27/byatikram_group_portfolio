@@ -54,7 +54,7 @@ export default function Home() {
     <div>
       {/* HERO */}
       <section id="hero" className="relative overflow-hidden">
-        {/* brand presence without heavy blue */}
+        
         <div className="absolute inset-0 bg-indigo-mist" />
         <div className="absolute -top-24 -right-24 h-72 w-72 rounded-full bg-brand-red/10 blur-3xl" />
         <div className="absolute -bottom-28 -left-28 h-80 w-80 rounded-full bg-brand-indigo/10 blur-3xl" />
@@ -195,10 +195,10 @@ export default function Home() {
   {/* dark overlay */}
   <div className="absolute inset-0 bg-slate-950/50"></div>
 
-  {/* subtle light texture (optional) */}
+  
   <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,.15),transparent_40%)]"></div>
 
-  {/* CONTENT — MUST be relative + z */}
+ 
   <div className="relative z-10 absolute bottom-0 left-0 right-0 p-6 text-white">
     <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold">
       <span className="h-2 w-2 rounded-full bg-brand-red"></span>
@@ -235,7 +235,7 @@ export default function Home() {
 
       </SectionShell>
 
-      {/* SERVICES PREVIEW (upgraded) */}
+      {/* SERVICES PREVIEW  */}
       <SectionShell
         id="services-preview"
         kicker="Services"
@@ -297,7 +297,7 @@ export default function Home() {
 
 
 
-{/* EVENT HIGHLIGHTS TEASER (Home) */}
+{/* EVENT HIGHLIGHTS  */}
 <SectionShell
   id="events-teaser"
   kicker="Proof"
@@ -350,7 +350,7 @@ export default function Home() {
       </div>
     </div>
 
-    {/* Right: Premium grid */}
+    {/* Right*/}
     <div className="lg:col-span-8">
       <div className="card-pro p-5 sm:p-6">
         <div className="grid grid-cols-2 gap-3 sm:gap-4 sm:grid-cols-4">
@@ -374,17 +374,17 @@ export default function Home() {
     />
   </div>
 
-  {/* subtle gradient only at bottom (does NOT hide photo) */}
+  
   <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/55 via-slate-950/0 to-transparent opacity-90" />
 
-  {/* compact badge (mobile safe) */}
+
   <div className="pointer-events-none absolute bottom-2 left-2 right-2 flex items-end justify-between gap-2">
     <div className="inline-flex items-center gap-2 rounded-full bg-slate-950/40 backdrop-blur-sm px-2.5 py-1 text-[10px] font-semibold text-white max-w-full">
       <span className="h-2 w-2 rounded-full bg-brand-red shrink-0" />
       <span className="truncate">{img.meta}</span>
     </div>
 
-    {/* optional: small “View” cue (looks premium) */}
+   
     <div className="hidden sm:inline-flex rounded-full bg-white/10 backdrop-blur-sm px-2.5 py-1 text-[10px] font-semibold text-white">
       View
     </div>
@@ -450,7 +450,7 @@ export default function Home() {
       </div>
     </div>
 
-    {/* What clients experience (keep as credibility proof) */}
+    {/* What clients experience  */}
     <div className="card p-7">
       <h3 className="text-lg font-semibold text-brand-indigo">What clients experience</h3>
       <ul className="mt-4 space-y-3 text-sm text-slate-600">
@@ -475,7 +475,7 @@ export default function Home() {
 </SectionShell>
 
 
-      {/* CLIENT LOGOS PREVIEW (upgraded) */}
+      {/* CLIENT LOGOS PREVIEW  */}
       <SectionShell
   id="clients-preview"
   kicker="Trust"

@@ -96,8 +96,6 @@ export default function About() {
 
 
 {/* LEADERSHIP — Founder Message + Bio */}
-
-{/* LEADERSHIP — polished corporate layout (message unchanged) */}
 <SectionShell
   id="founder-message"
   kicker="Leadership"
@@ -122,7 +120,6 @@ export default function About() {
         Culture, awareness, and action—working together.
       </h3>
 
-      {/* MESSAGE — keep exactly as-is */}
       <div className="mt-4 space-y-4 text-sm sm:text-[15px] text-slate-600 leading-relaxed">
         <p>
           Byatikram was born from a belief that meaningful change begins when culture, awareness, and action come together.
@@ -243,7 +240,7 @@ export default function About() {
           </div>
         </summary>
 
-        {/* BIOGRAPHY — keep text as-is */}
+        {/* BIOGRAPHY */}
         <div className="mt-6 space-y-4 text-sm sm:text-[15px] text-slate-700 leading-relaxed">
           <p><span className="font-semibold text-slate-900">Dr. Saumen Bharatiya</span></p>
           <p>Patron-in-Chief, Byatikram Group</p>

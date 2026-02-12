@@ -71,7 +71,7 @@ const past = [
 ];
 
 /* =======================
-   GALLERY DATA (20 items later)
+   GALLERY DATA 
    ======================= */
 
 const gallery = [
@@ -96,9 +96,7 @@ const gallery = [
   { title: "Event Highlight 19", date: "2025-01-01", place: "Assam", tag: "Event", img: g19 },
   { title: "Event Highlight 20", date: "2025-01-01", place: "Assam", tag: "Event", img: g20 },
 ];
-/* =======================
-   UI HELPERS
-   ======================= */
+
 
 function DatePill({ date, className = "" }) {
   return (
@@ -277,10 +275,10 @@ export default function Events() {
           />
         </div>
 
-        {/* Hover overlay (desktop) */}
+        
         <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/10 to-transparent opacity-0 group-hover:opacity-100 transition" />
 
-        {/* Minimal caption: only on hover (desktop), always visible on mobile as compact badge */}
+        
         <div className="absolute bottom-0 left-0 right-0 p-3">
           {/* mobile badge */}
           <div className="sm:hidden inline-flex items-center gap-2 rounded-full bg-slate-950/40 backdrop-blur-sm px-3 py-1 text-[11px] font-semibold text-white max-w-full">

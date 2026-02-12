@@ -42,7 +42,7 @@ export default function Navbar() {
               <Logo />
             </button>
 
-            {/* Mobile menu button: only on < md */}
+            
             <div className="md:hidden ml-auto shrink-0 relative z-30">
               <MobileMenu />
             </div>
@@ -58,7 +58,7 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Desktop nav: show from md+ */}
+          
           <nav className="hidden md:flex md:ml-auto items-center gap-1">
             {nav.map((item) => (
               <NavLink

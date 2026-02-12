@@ -19,7 +19,6 @@ export default function App() {
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
         <Route path="/events" element={<Events />} />
-        {/* backward compatible */}
         <Route path="/work" element={<Navigate to="/events" replace />} />
         <Route path="/media" element={<Media />} />
         <Route path="/clients" element={<Clients />} />

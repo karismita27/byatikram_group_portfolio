@@ -23,10 +23,6 @@ export default function SiteLayout() {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      {/*
-        Navbar is fixed and becomes taller on mobile (logo + search + menu).
-        Add a little extra breathing space so content doesn't start immediately under it.
-      */}
       <main className="flex-1 pt-[120px] sm:pt-[124px] md:pt-24">
         <Outlet />
       </main>

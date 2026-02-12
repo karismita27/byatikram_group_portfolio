@@ -1,10 +1,5 @@
 import React from "react";
 
-/**
- * VideoEmbed
- * - type="youtube": pass src like https://www.youtube.com/embed/VIDEO_ID
- * - type="file": pass src like https://your-storage.com/video.mp4
- */
 export default function VideoEmbed({ type = "youtube", src, title = "Video" }) {
   if (type === "file") {
     return (
