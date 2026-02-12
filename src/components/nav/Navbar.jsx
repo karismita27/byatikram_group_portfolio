@@ -9,7 +9,9 @@ const nav = [
   { label: "Services", to: "/services" },
   { label: "Events", to: "/events" },
   { label: "Media", to: "/media" },
+  { label: "Subsidiaries", to: "/subsidiaries" },
   { label: "Contact Us", to: "/contact" },
+  
 ];
 
 function Logo() {

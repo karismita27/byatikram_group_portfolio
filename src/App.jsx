@@ -8,6 +8,8 @@ import Events from "./pages/Events.jsx";
 import Media from "./pages/Media.jsx";
 import Contact from "./pages/Contact.jsx";
 import Clients from "./pages/Clients.jsx";
+import Subsidiaries from "./pages/Subsidiaries.jsx";
+import SubsidiaryDetails from "./pages/SubsidiaryDetails.jsx";
 
 export default function App() {
   return (
@@ -22,7 +24,10 @@ export default function App() {
         <Route path="/media" element={<Media />} />
         <Route path="/clients" element={<Clients />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/subsidiaries" element={<Subsidiaries />} />
+        <Route path="/subsidiaries/:slug" element={<SubsidiaryDetails />} />  
         <Route path="*" element={<Navigate to="/" replace />} />
+          
       </Route>
     </Routes>
   );
