@@ -4,7 +4,7 @@ import SectionShell from "../components/site/SectionShell.jsx";
 import StatPills from "../components/site/StatPills.jsx";
 import LogoPill from "../components/site/LogoPill.jsx";
 import { clients } from "../data/clients.js";
-import aboutImg from "../assets/images/events/p-1.jpg";
+import aboutImg from "../assets/images/events/p-33.jpg";
 import eh1 from "../assets/images/events/p-1.jpg";
 import eh2 from "../assets/images/events/p-2.jpg";
 import eh3 from "../assets/images/events/p13.jpg";
@@ -13,6 +13,11 @@ import eh5 from "../assets/images/events/p-24.jpg";
 import eh6 from "../assets/images/events/p-26.jpg";
 import eh7 from "../assets/images/events/p-30.jpg";
 import eh8 from "../assets/images/events/p-35.jpg";
+import hero1 from "../assets/images/events/p-41.jpg";
+import hero2 from "../assets/images/events/p-1.jpg";
+import hero3 from "../assets/images/events/p-27.jpg";
+
+import HeroSlider from "../components/site/HeroSlider.jsx";
 
 const eventHighlightsTeaser = [
   { src: eh1, alt: "Press briefing setup", meta: "Media • 2025" },
@@ -90,49 +95,32 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="card p-6 sm:p-8 bg-white/85 backdrop-blur">
-              <div className="flex items-start justify-between gap-4">
-                <div>
-                  <h2 className="text-lg font-semibold text-brand-indigo">
-                    What we do <span className="text-brand-red">•</span>
-                  </h2>
-                  <p className="mt-2 text-sm text-slate-600 leading-relaxed">
-                    End-to-end PR and communications delivery—from messaging and media relations to on-ground events and
-                    digital campaigns.
-                  </p>
-                </div>
-                <div className="hidden sm:flex items-center gap-2 rounded-full bg-white/80 px-3 py-2 ring-1 ring-slate-200/70 text-xs font-semibold text-slate-700">
-                  <span className="h-2 w-2 rounded-full bg-brand-indigo" />
-                  Built for credibility
-                </div>
-              </div>
-
-              <div className="mt-6 grid gap-3 sm:grid-cols-2">
-                {[
-                  { title: "Public Relations", desc: "Media outreach, press releases, reputation." },
-                  { title: "Event Management", desc: "Planning, execution, stakeholder coordination." },
-                  { title: "Digital Branding", desc: "Content systems, campaigns, creative direction." },
-                  { title: "Community Initiatives", desc: "CSR, social programs, engagement." },
-                ].map((x) => (
-                  <div
-                    key={x.title}
-                    className="rounded-2xl bg-white p-4 ring-1 ring-slate-200/70 hover:ring-brand-indigo/30 transition"
-                  >
-                    <div className="flex items-center justify-between gap-3">
-                      <div className="font-semibold text-slate-800">{x.title}</div>
-                      <span className="h-2 w-2 rounded-full bg-brand-red" />
-                    </div>
-                    <div className="mt-1 text-sm text-slate-600">{x.desc}</div>
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-6">
-                <NavLink to="/services" className="text-sm font-semibold text-brand-indigo link-underline">
-                  Explore all services →
-                </NavLink>
-              </div>
-            </div>
+            <HeroSlider
+  slides={[
+    {
+      badge: "Public Relations",
+      title: "Media outreach that builds credibility",
+      subtitle: "Press materials, story angles, outreach planning, and clean reporting.",
+      bullets: ["Messaging framework", "Press releases & kits", "Media outreach", "Coverage reporting"],
+      image: hero1,
+    },
+    {
+      badge: "Event Management",
+      title: "Events executed with discipline",
+      subtitle: "End-to-end planning, stakeholder coordination, and on-ground delivery.",
+      bullets: ["Concept & production", "Vendor coordination", "On-ground ops", "Post-event wrap-up"],
+      image: hero2,
+    },
+    {
+      badge: "Digital Branding",
+      title: "Digital communication with consistency",
+      subtitle: "Campaign content systems, creative direction, and brand tone control.",
+      bullets: ["Content calendars", "Campaign planning", "Brand assets", "Iteration & improvement"],
+      image: hero3,
+    },
+  ]}
+  intervalMs={4500}
+/>
           </div>
         </div>
       </section>
