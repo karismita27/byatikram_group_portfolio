@@ -1,10 +1,11 @@
 import React from "react";
+import { useEffect, useState} from "react";
 import { NavLink } from "react-router-dom";
 import SectionShell from "../components/site/SectionShell.jsx";
 import StatPills from "../components/site/StatPills.jsx";
 import LogoPill from "../components/site/LogoPill.jsx";
 import { clients } from "../data/clients.js";
-import aboutImg from "../assets/images/events/p-33.jpg";
+import aboutImg from "../assets/images/events/p-1.jpg";
 import eh1 from "../assets/images/events/p-1.jpg";
 import eh2 from "../assets/images/events/p-2.jpg";
 import eh3 from "../assets/images/events/p13.jpg";
@@ -13,11 +14,7 @@ import eh5 from "../assets/images/events/p-24.jpg";
 import eh6 from "../assets/images/events/p-26.jpg";
 import eh7 from "../assets/images/events/p-30.jpg";
 import eh8 from "../assets/images/events/p-35.jpg";
-import hero1 from "../assets/images/events/p-41.jpg";
-import hero2 from "../assets/images/events/p-1.jpg";
-import hero3 from "../assets/images/events/p-27.jpg";
 
-import HeroSlider from "../components/site/HeroSlider.jsx";
 
 const eventHighlightsTeaser = [
   { src: eh1, alt: "Press briefing setup", meta: "Media • 2025" },
@@ -30,6 +27,7 @@ const eventHighlightsTeaser = [
   { src: eh8, alt: "Team execution moment", meta: "Delivery • 2025" },
 ];
 
+const heroSlides = [eh1,eh2, eh6, eh4];
 
 const servicePreview = [
   {
@@ -55,16 +53,41 @@ const servicePreview = [
 ];
 
 export default function Home() {
+
+  
+const [slide, setSlide] = useState(0);
+
+useEffect(() => {
+  const timer = setInterval(() => {
+    setSlide((prev) => (prev + 1) % heroSlides.length);
+  }, 3500);
+  return () => clearInterval(timer);
+}, []);
+  
   return (
     <div>
       {/* HERO */}
-      <section id="hero" className="relative overflow-hidden">
-        
-        <div className="absolute inset-0 bg-indigo-mist" />
-        <div className="absolute -top-24 -right-24 h-72 w-72 rounded-full bg-brand-red/10 blur-3xl" />
-        <div className="absolute -bottom-28 -left-28 h-80 w-80 rounded-full bg-brand-indigo/10 blur-3xl" />
+      <section id="hero" className="relative overflow-hidden sm:py-1 lg:py-5 w-full flex items-center">
 
-        <div className="container-pad relative pt-20 pb-14 sm:pt-16 sm:pb-20">
+        
+        
+        
+
+        <div className="absolute inset-0 -z-20">
+  {heroSlides.map((img, i) => (
+    <img
+      key={i}
+      src={img}
+      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+        i === slide ? "opacity-100" : "opacity-0"
+      }`}
+    />
+  ))}
+</div>
+
+<div className="absolute inset-0 bg-slate-900/55 -z-10"></div>
+
+        <div className="container-pad relative  pt-12 pb-20 lg:pt-32 lg:pb-20">
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <div>
               <div className="inline-flex items-center gap-2 rounded-full bg-white/80 backdrop-blur px-4 py-2 ring-1 ring-slate-200/70 text-xs font-semibold text-slate-700">
@@ -72,55 +95,41 @@ export default function Home() {
                 Corporate • PR • Communications
               </div>
 
-              <h1 className="mt-4 text-4xl sm:text-5xl font-semibold text-brand-ink tracking-tight">
+              <h1 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-semibold text-white tracking-tight">
                 Byatikram Group
               </h1>
 
-              <p className="mt-5 text-base sm:text-lg text-slate-600 leading-relaxed max-w-xl">
+              <p className="mt-4 text-sm sm:text-base lg:text-lg text-white/90 max-w-xl">
                 Strategy-led public relations and communications—built for stakeholder trust, media credibility,
                 and consistent execution.
               </p>
 
-              <div className="mt-8 flex flex-col sm:flex-row gap-3">
-                <NavLink to="/contact" className="btn-primary-red">
+              <div className="mt-6 flex flex-wrap gap-2  justify-start sm:justify-start">
+                <NavLink to="/contact" className="btn-primary-red ">
                   Contact Us
                 </NavLink>
                 <NavLink to="/events" className="btn-outline-indigo">
                   View Events
                 </NavLink>
               </div>
-
-              <div className="mt-10">
-                <StatPills />
+              
+   <div className="mt-5 flex flex-wrap gap-2">
+                <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 ring-1 ring-white/20 backdrop-blur-sm text-[11px] font-semibold text-white">
+                  <span className="h-2 w-2 rounded-full bg-brand-indigo" />
+                  10+ years
+                </div>
+                <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 ring-1 ring-white/20 backdrop-blur-sm text-[11px] font-semibold text-white">
+                  <span className="h-2 w-2 rounded-full bg-brand-red" />
+                  100+ clients
+                </div>
+                <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 ring-1 ring-white/20 backdrop-blur-sm text-[11px] font-semibold text-white">
+                  <span className="h-2 w-2 rounded-full bg-brand-indigo" />
+                  200+ Campaigns
+                </div>
               </div>
+            
             </div>
-
-            <HeroSlider
-  slides={[
-    {
-      badge: "Public Relations",
-      title: "Media outreach that builds credibility",
-      subtitle: "Press materials, story angles, outreach planning, and clean reporting.",
-      bullets: ["Messaging framework", "Press releases & kits", "Media outreach", "Coverage reporting"],
-      image: hero1,
-    },
-    {
-      badge: "Event Management",
-      title: "Events executed with discipline",
-      subtitle: "End-to-end planning, stakeholder coordination, and on-ground delivery.",
-      bullets: ["Concept & production", "Vendor coordination", "On-ground ops", "Post-event wrap-up"],
-      image: hero2,
-    },
-    {
-      badge: "Digital Branding",
-      title: "Digital communication with consistency",
-      subtitle: "Campaign content systems, creative direction, and brand tone control.",
-      bullets: ["Content calendars", "Campaign planning", "Brand assets", "Iteration & improvement"],
-      image: hero3,
-    },
-  ]}
-  intervalMs={4500}
-/>
+           
           </div>
         </div>
       </section>

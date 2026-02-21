@@ -26,7 +26,7 @@ export default function Navbar() {
   const navigate = useNavigate();
 
   return (
-    <header className="fixed top-0 inset-x-0 z-50">
+    <header id ="site-nav" className="fixed top-0 inset-x-0 z-50">
       {/* soft backdrop */}
       <div className="absolute inset-0 bg-white/40 backdrop-blur-[6px]" />
       <div className="container-pad relative pt-3">
