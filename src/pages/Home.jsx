@@ -88,10 +88,10 @@ useEffect(() => {
 
 <div className="absolute inset-0 bg-slate-900/55 -z-10"></div>
 
-        <div className="container-pad relative  pt-28 pb-20 lg:pt-32 lg:pb-20">
+        <div className="container-pad relative  pt-24 pb-16 lg:pt-32 lg:pb-20">
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
-            <div>
-              <div className="inline-flex items-center gap-2 rounded-full bg-white/80 backdrop-blur px-4 py-2 ring-1 ring-slate-200/70 text-xs font-semibold text-slate-700">
+            <div className="lg:pt-0 pt-6">
+              <div className="inline-flex items-center gap-2 rounded-full bg-white/80 backdrop-blur px-4 py-2  ring-1 ring-slate-200/70 text-xs font-semibold text-slate-700">
                 <span className="h-2 w-2 rounded-full bg-brand-red" />
                 Corporate • PR • Communications
               </div>
@@ -115,15 +115,15 @@ useEffect(() => {
               </div>
               
    <div className="mt-5 flex flex-wrap gap-2">
-                <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 ring-1 ring-white/20 backdrop-blur-sm text-[11px] font-semibold text-white">
+                <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-2 lg:px-4 py-2 ring-1 ring-white/20 backdrop-blur-sm text-[11px] font-semibold text-white">
                   <span className="h-2 w-2 rounded-full bg-brand-indigo" />
                   10+ years
                 </div>
-                <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 ring-1 ring-white/20 backdrop-blur-sm text-[11px] font-semibold text-white">
+                <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-2 lg:px-4 py-2 ring-1 ring-white/20 backdrop-blur-sm text-[11px] font-semibold text-white">
                   <span className="h-2 w-2 rounded-full bg-brand-red" />
                   100+ clients
                 </div>
-                <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 ring-1 ring-white/20 backdrop-blur-sm text-[11px] font-semibold text-white">
+                <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-2 px-4 py-2 ring-1 ring-white/20 backdrop-blur-sm text-[11px] font-semibold text-white">
                   <span className="h-2 w-2 rounded-full bg-brand-indigo" />
                   200+ Campaigns
                 </div>
