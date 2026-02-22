@@ -73,13 +73,14 @@ useEffect(() => {
         
         
 
-        <div className="absolute inset-0 -z-20">
+       
+<div className="absolute inset-0 -z-20">
   {heroSlides.map((img, i) => (
     <img
       key={i}
       src={img}
       className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-        i === slide ? "opacity-100" : "opacity-0"
+        i === slide ? "opacity-250" : "opacity-0"
       }`}
     />
   ))}
@@ -87,7 +88,7 @@ useEffect(() => {
 
 <div className="absolute inset-0 bg-slate-900/55 -z-10"></div>
 
-        <div className="container-pad relative  pt-12 pb-20 lg:pt-32 lg:pb-20">
+        <div className="container-pad relative  pt-24 pb-20 lg:pt-32 lg:pb-20">
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <div>
               <div className="inline-flex items-center gap-2 rounded-full bg-white/80 backdrop-blur px-4 py-2 ring-1 ring-slate-200/70 text-xs font-semibold text-slate-700">
