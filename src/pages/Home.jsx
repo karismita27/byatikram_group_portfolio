@@ -90,7 +90,7 @@ useEffect(() => {
       <section id="hero" className="relative overflow-hidden sm:py-1 lg:py-5 w-full flex items-center">
        
 {/* Background Sliding Images */}
-<div className="absolute inset-0 -z-20 overflow-hidden">
+<div className="absolute inset-0 -z-20">
   <div
     className={`flex h-full ${
       isTransitioning ? "transition-transform duration-700 ease-in-out" : ""
