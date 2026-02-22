@@ -56,39 +56,79 @@ export default function Home() {
 
   
 const [slide, setSlide] = useState(0);
+const [isTransitioning, setIsTransitioning] = useState(true);
+const extendedSlides = [...heroSlides, heroSlides[0]];
 
 useEffect(() => {
   const timer = setInterval(() => {
-    setSlide((prev) => (prev + 1) % heroSlides.length);
+    setSlide((prev) => prev + 1);
   }, 3500);
+
   return () => clearInterval(timer);
 }, []);
+
+  useEffect(() => {
+  if (slide === heroSlides.length) {
+    setTimeout(() => {
+      setIsTransitioning(false); // disable animation
+      setSlide(0);               // jump to real first slide
+    }, 700); // must match duration-700
+  }
+}, [slide]);
+
+useEffect(() => {
+  if (!isTransitioning) {
+    setTimeout(() => {
+      setIsTransitioning(true);
+    }, 50);
+  }
+}, [isTransitioning]);
   
   return (
     <div>
       {/* HERO */}
       <section id="hero" className="relative overflow-hidden sm:py-1 lg:py-5 w-full flex items-center">
-
-        
-        
-        
-
        
-<div className="absolute inset-0 -z-20">
-  {heroSlides.map((img, i) => (
-    <img
-      key={i}
-      src={img}
-      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-        i === slide ? "opacity-250" : "opacity-0"
-      }`}
-    />
-  ))}
+{/* Background Sliding Images */}
+<div className="absolute inset-0 -z-20 overflow-hidden">
+  <div
+    className={`flex h-full ${
+      isTransitioning ? "transition-transform duration-700 ease-in-out" : ""
+    }`}
+    style={{
+      transform: `translateX(-${slide * 100}vw)`
+    }}
+  >
+    {extendedSlides.map((img, i) => (
+      <div key={i} className="w-screen h-full flex-shrink-0">
+        <img
+          src={img}
+          alt="Hero slide"
+          className="w-full h-full object-cover"
+        />
+      </div>
+    ))}
+  </div>
 </div>
 
 <div className="absolute inset-0 bg-slate-900/55 -z-10"></div>
 
-        <div className="container-pad relative  pt-24 pb-16 lg:pt-32 lg:pb-20">
+ {/* Dot Indicators */}
+  <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-3 z-20">
+    {heroSlides.map((_, index) => (
+      <button
+        key={index}
+        onClick={() => setSlide(index)}
+        className={`h-1 w-1 rounded-full transition-all duration-300 ${
+          slide % heroSlides.length === index
+            ? "bg-white scale-110"
+            : "bg-white/40 hover:bg-white/70"
+        }`}
+      />
+    ))}
+  </div>
+
+        <div className="container-pad relative  pt-24 pb-16 lg:pt-32 lg:pb-20 lg:pl-20">
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <div className="lg:pt-0 pt-6">
               <div className="inline-flex items-center gap-2 rounded-full bg-white/80 backdrop-blur px-4 py-2  ring-1 ring-slate-200/70 text-xs font-semibold text-slate-700">
@@ -109,7 +149,7 @@ useEffect(() => {
                 <NavLink to="/contact" className="btn-primary-red ">
                   Contact Us
                 </NavLink>
-                <NavLink to="/events" className="btn-outline-indigo">
+                <NavLink to="/events" className="inline-flex items-center justify-center rounded-xl px-5 py-2.5 font-semibold text-white shadow-soft bg-indigo-900">
                   View Events
                 </NavLink>
               </div>
@@ -123,7 +163,7 @@ useEffect(() => {
                   <span className="h-2 w-2 rounded-full bg-brand-red" />
                   100+ clients
                 </div>
-                <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-2 px-4 py-2 ring-1 ring-white/20 backdrop-blur-sm text-[11px] font-semibold text-white">
+                <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-2 lg:px-4 py-2 ring-1 ring-white/20 backdrop-blur-sm text-[11px] font-semibold text-white">
                   <span className="h-2 w-2 rounded-full bg-brand-indigo" />
                   200+ Campaigns
                 </div>
