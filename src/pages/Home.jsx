@@ -88,7 +88,7 @@ useEffect(() => {
 
 <div className="absolute inset-0 bg-slate-900/55 -z-10"></div>
 
-        <div className="container-pad relative  pt-24 pb-20 lg:pt-32 lg:pb-20">
+        <div className="container-pad relative  pt-32 pb-20 lg:pt-32 lg:pb-20">
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <div>
               <div className="inline-flex items-center gap-2 rounded-full bg-white/80 backdrop-blur px-4 py-2 ring-1 ring-slate-200/70 text-xs font-semibold text-slate-700">
