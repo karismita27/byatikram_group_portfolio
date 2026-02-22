@@ -14,6 +14,9 @@ import eh5 from "../assets/images/events/p-24.jpg";
 import eh6 from "../assets/images/events/p-26.jpg";
 import eh7 from "../assets/images/events/p-30.jpg";
 import eh8 from "../assets/images/events/p-35.jpg";
+import hero1 from "../assets/images/events/p-7.jpg";
+import hero2 from "../assets/images/events/p-16.jpg";
+import hero3 from "../assets/images/events/p-17.jpg";
 
 
 const eventHighlightsTeaser = [
@@ -27,7 +30,7 @@ const eventHighlightsTeaser = [
   { src: eh8, alt: "Team execution moment", meta: "Delivery • 2025" },
 ];
 
-const heroSlides = [eh1,eh2, eh6, eh4];
+const heroSlides = [eh1,hero1,hero2,hero3];
 
 const servicePreview = [
   {
