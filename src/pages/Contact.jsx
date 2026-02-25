@@ -9,16 +9,45 @@ export default function Contact() {
   const [message, setMessage] = React.useState("");
   const [submitted, setSubmitted] = React.useState(false);
 
-  function onSubmit(e) {
-    e.preventDefault();
-    setSubmitted(true);
-    
-    setTimeout(() => setSubmitted(false), 3500);
-    setName("");
-    setEmail("");
-    setMessage("");
-    setType("Feedback");
+  
+
+async function onSubmit(e) {
+  e.preventDefault();
+
+  const formData = {
+    name,
+    email,
+    message,
+    type
+  };
+
+  try {
+    const response = await fetch("http://localhost:5000/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(formData)
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      setSubmitted(true);
+      setTimeout(() => setSubmitted(false), 3500);
+
+      setName("");
+      setEmail("");
+      setMessage("");
+      setType("Feedback");
+    } else {
+      alert("Something went wrong");
+    }
+  } catch (error) {
+    console.error(error);
+    alert("Server error");
   }
+}
 
   return (
     <div>
@@ -34,7 +63,8 @@ export default function Contact() {
 
             {submitted && (
               <div className="mt-4 rounded-2xl bg-green-50 ring-1 ring-green-200 px-4 py-3 text-sm text-green-800">
-                Submitted (demo). Hook this to your backend/email service when ready.
+                Message submitted successfully!
+                
               </div>
             )}
 
