@@ -15,10 +15,10 @@ async function onSubmit(e) {
   e.preventDefault();
 
   const formData = {
+    type,
     name,
     email,
-    message,
-    type
+    message
   };
 
   try {
@@ -64,7 +64,7 @@ async function onSubmit(e) {
             {submitted && (
               <div className="mt-4 rounded-2xl bg-green-50 ring-1 ring-green-200 px-4 py-3 text-sm text-green-800">
                 Message submitted successfully!
-                
+
               </div>
             )}
 
