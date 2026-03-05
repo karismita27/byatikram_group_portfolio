@@ -10,6 +10,9 @@ import Contact from "./pages/Contact.jsx";
 import Clients from "./pages/Clients.jsx";
 import Subsidiaries from "./pages/Subsidiaries.jsx";
 import SubsidiaryDetails from "./pages/SubsidiaryDetails.jsx";
+import Dashboard from "./admin/pages/Dashboard";
+import Contacts from "./admin/pages/Contacts";
+
 
 export default function App() {
   return (
@@ -26,8 +29,12 @@ export default function App() {
         <Route path="/subsidiaries" element={<Subsidiaries />} />
         <Route path="/subsidiaries/:slug" element={<SubsidiaryDetails />} />  
         <Route path="*" element={<Navigate to="/" replace />} />
+        
           
       </Route>
+
+      <Route path="/admin/dashboard" element={<Dashboard/>} />
+      <Route path="/admin/contacts" element={<Contacts/>} />
     </Routes>
   );
 }

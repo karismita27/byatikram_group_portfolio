@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import SearchBar from "./SearchBar.jsx";
+/*import SearchBar from "./SearchBar.jsx";*/
 import mainLogo from "../../assets/images/main_logo.png";
 
 const nav = [
@@ -14,11 +14,26 @@ const nav = [
   
 ];
 
+
 function Logo() {
   return (
-    <div className="flex items-center">
-      <img src= {mainLogo} alt="Byatikram Group Logo" className="w-24 h-auto"/>
+    <div className="flex items-center gap-2">
+      <img
+        src={mainLogo}
+        alt="Byatikram Group Logo"
+        className="w-24 h-auto"
+      />
+      {/*hide text on mobile */}
+      <div className="hidden md:block leading-tight">
+        <p className="font-semibold text-sm text-gray-800">
+          Byatikram Group
+        </p>
+
+        <p className="text-xs text-gray-500">
+          Corporate Communications & PR
+        </p>
       </div>
+    </div>
   );
 }
 
@@ -48,7 +63,7 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Search: full width on mobile, middle on desktop */}
+          {/* Search: full width on mobile, middle on desktop 
           <div className="w-full md:flex-1 md:max-w-xl relative z-20">
             <div className="md:hidden">
               <SearchBar compact />
@@ -56,7 +71,7 @@ export default function Navbar() {
             <div className="hidden md:block">
               <SearchBar />
             </div>
-          </div>
+          </div>*/}
 
           
           <nav className="hidden md:flex md:ml-auto items-center gap-1">
