@@ -131,7 +131,7 @@ useEffect(() => {
     ))}
   </div>
 
-        <div className="container-pad relative  pt-8 pb-28 lg:pt-32 lg:pb-20 lg:pl-20">
+        <div className="container-pad relative  pt-32 pb-16 lg:pt-32 lg:pb-20 lg:pl-20">
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <div className="lg:pt-0 pt-6">
               <div className="inline-flex items-center gap-2 rounded-full bg-white/80 backdrop-blur px-4 py-2  ring-1 ring-slate-200/70 text-xs font-semibold text-slate-700">
@@ -139,7 +139,7 @@ useEffect(() => {
                 Corporate • PR • Communications
               </div>
 
-              <h1 className="mt-14 text-3xl sm:text-4xl lg:text-5xl font-semibold text-white tracking-tight">
+              <h1 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-semibold text-white tracking-tight">
                 Byatikram Group
               </h1>
 
