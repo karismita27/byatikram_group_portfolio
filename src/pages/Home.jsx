@@ -139,7 +139,7 @@ useEffect(() => {
                 Corporate • PR • Communications
               </div>
 
-              <h1 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-semibold text-white tracking-tight">
+              <h1 className="mt-14 text-3xl sm:text-4xl lg:text-5xl font-semibold text-white tracking-tight">
                 Byatikram Group
               </h1>
 
