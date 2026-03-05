@@ -33,9 +33,9 @@ export const units = [
       "Engagement reporting (coverage, highlights, learnings)",
     ],
     gallery: [
-      { src: img1, alt: "Stakeholder engagement documentation and briefing material" },
-      { src: img2, alt: "Institutional communications and public information outreach" },
-      { src: img3, alt: "Media coordination and broadcast support (illustrative)" },
+      { src: img1, alt: "Stakeholder engagement" },
+      { src: img2, alt: "Institutional communications " },
+      { src: img3, alt: "Media coordination" },
     ],
     address: "Guwahati, Assam, India",
     email: "info@bharatiyaassociates.example",

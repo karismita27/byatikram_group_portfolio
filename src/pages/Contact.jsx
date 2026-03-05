@@ -59,7 +59,7 @@ async function onSubmit(e) {
         <div className="grid gap-6 lg:grid-cols-2 lg:items-start">
           {/* Left: Form */}
           <div id="contact-form" className="card p-7">
-            <h1 className="text-lg font-semibold text-brand-indigo">Feedback & Complaint</h1>
+            <h1 className="text-lg font-semibold text-brand-indigo">Feedback & Enquiry</h1>
 
             {submitted && (
               <div className="mt-4 rounded-2xl bg-green-50 ring-1 ring-green-200 px-4 py-3 text-sm text-green-800">
@@ -77,7 +77,7 @@ async function onSubmit(e) {
                   className="mt-2 w-full rounded-2xl border border-slate-200 bg-white px-3 py-3 text-sm text-slate-700 hover:border-slate-300 transition"
                 >
                   <option>Feedback</option>
-                  <option>Complaint</option>
+                  <option>Enquiry</option>
                 </select>
               </div>
 

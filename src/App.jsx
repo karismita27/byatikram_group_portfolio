@@ -10,8 +10,8 @@ import Contact from "./pages/Contact.jsx";
 import Clients from "./pages/Clients.jsx";
 import Subsidiaries from "./pages/Subsidiaries.jsx";
 import SubsidiaryDetails from "./pages/SubsidiaryDetails.jsx";
-import Dashboard from "./admin/pages/Dashboard";
-import Contacts from "./admin/pages/Contacts";
+import AdminRoutes from "./admin/routes/AdminRoutes.jsx";
+
 
 
 export default function App() {
@@ -33,8 +33,8 @@ export default function App() {
           
       </Route>
 
-      <Route path="/admin/dashboard" element={<Dashboard/>} />
-      <Route path="/admin/contacts" element={<Contacts/>} />
+      <Route path="/admin/*" element={<AdminRoutes />} />
+
     </Routes>
   );
 }

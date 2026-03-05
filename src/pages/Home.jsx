@@ -276,65 +276,113 @@ useEffect(() => {
 
       </SectionShell>
 
-      {/* SERVICES PREVIEW  */}
-      <SectionShell
-        id="services-preview"
-        kicker="Services"
-        title={
-          <span>
-            Integrated communications with <span className="text-brand-red">measurable</span> outcomes
-          </span>
-        }
-        subtitle="Premium service cards with clear descriptions and bullet points for fast scanning."
-        className="section-soft"
+     
+
+{/* SERVICES PREVIEW  */}
+<SectionShell
+  id="services-preview"
+  kicker="Services"
+  title={
+    <span>
+      Integrated communications with <span className="text-brand-red">measurable</span> outcomes
+    </span>
+  }
+  subtitle="Strategic communications services designed for reputation, visibility, and disciplined execution."
+  className="section-soft"
+>
+  <div className="grid gap-5 lg:grid-cols-2">
+    {servicePreview.map((s, index) => (
+      <div
+        key={s.title}
+        className="group relative overflow-hidden rounded-[28px] bg-white p-6 sm:p-7 ring-1 ring-slate-200/70 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:ring-brand-indigo/20"
       >
-        <div className="grid gap-5 lg:grid-cols-2">
-          {servicePreview.map((s) => (
-            <div key={s.title} className="card-pro p-7 card-hover">
-              <div className="flex items-start justify-between gap-4">
-                <div>
-                  <h3 className="text-lg font-semibold text-brand-indigo">{s.title}</h3>
-                  <p className="mt-2 text-sm text-slate-600 leading-relaxed">{s.desc}</p>
-                </div>
-                <div className="shrink-0 icon-pill p-3">
-                  <div className="h-2 w-2 rounded-full bg-brand-red" />
-                </div>
+        <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-brand-indigo via-brand-red to-brand-indigo opacity-90" />
+        <div className="absolute -right-16 -top-16 h-36 w-36 rounded-full bg-brand-red/5 blur-3xl transition duration-300 group-hover:bg-brand-indigo/10" />
+
+        <div className="relative z-10">
+          <div className="flex items-start justify-between gap-4">
+            <div className="max-w-[85%]">
+              <div className="inline-flex items-center rounded-full bg-brand-mist px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-brand-indigo">
+                Service {String(index + 1).padStart(2, "0")}
               </div>
 
-              <ul className="mt-4 grid gap-2 text-sm text-slate-600 sm:grid-cols-2">
-                {s.bullets.map((b) => (
-                  <li key={b} className="flex items-start gap-2">
-                    <span className="mt-2 h-2 w-2 rounded-full bg-brand-red" />
-                    <span>{b}</span>
-                  </li>
-                ))}
-              </ul>
+              <h3 className="mt-4 text-xl font-semibold tracking-tight text-brand-indigo">
+                {s.title}
+              </h3>
 
-              <div className="mt-6 flex items-center justify-between">
-                <div className="text-xs text-slate-500">Clear scope • Reliable delivery</div>
-                <NavLink to="/services" className="text-sm font-semibold text-brand-indigo link-underline">
-                  Details →
-                </NavLink>
+              <p className="mt-3 text-sm leading-relaxed text-slate-600">
+                {index === 0 &&
+                  "Strategic message development, media documentation, targeted outreach, and structured coverage tracking to strengthen public credibility."}
+                {index === 1 &&
+                  "End-to-end event planning and execution with disciplined coordination across production, logistics, stakeholders, and delivery teams."}
+                {index === 2 &&
+                  "Consistent digital communication systems that align brand voice, campaign messaging, creative direction, and audience engagement."}
+                {index === 3 &&
+                  "Community-facing initiatives designed to create authentic participation, partnership alignment, and credible impact storytelling."}
+              </p>
+            </div>
+
+            <div className="shrink-0">
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-indigo/10 to-brand-red/10 ring-1 ring-slate-200/80 transition duration-300 group-hover:scale-105 group-hover:ring-brand-red/20">
+                <span className="h-2.5 w-2.5 rounded-full bg-brand-red" />
               </div>
             </div>
-          ))}
-        </div>
+          </div>
 
-        <div className="mt-9 flex flex-col sm:flex-row gap-3">
-          <NavLink
-            to="/services"
-            className="inline-flex items-center justify-center rounded-2xl bg-brand-red text-white px-6 py-3 text-sm font-semibold hover:opacity-95 transition"
-          >
-            View all services
-          </NavLink>
-          <NavLink
-            to="/contact"
-            className="inline-flex items-center justify-center rounded-2xl bg-white ring-1 ring-slate-200 px-6 py-3 text-sm font-semibold text-brand-indigo hover:bg-slate-50 transition"
-          >
-            Request a proposal
-          </NavLink>
+          <div className="mt-6 rounded-2xl bg-slate-50/90 p-4 ring-1 ring-slate-200/70">
+            <div className="mb-3 flex items-center gap-2">
+              <span className="h-[2px] w-8 rounded-full bg-brand-red" />
+              <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-500">
+                Core deliverables
+              </span>
+            </div>
+
+            <ul className="grid gap-3 text-sm text-slate-700 sm:grid-cols-2">
+              {s.bullets.map((b) => (
+                <li key={b} className="flex items-start gap-3">
+                  <span className="mt-1.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-white ring-1 ring-slate-200">
+                    <span className="h-1.5 w-1.5 rounded-full bg-brand-red" />
+                  </span>
+                  <span className="leading-relaxed">{b}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="mt-6 flex items-center justify-between gap-4 border-t border-slate-200/80 pt-5">
+            <div className="text-xs font-medium text-slate-500">
+              Strategy-led • Corporate-ready delivery
+            </div>
+            <NavLink
+              to="/services"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-brand-indigo transition group-hover:text-brand-red"
+            >
+              Details
+              <span className="transition-transform duration-300 group-hover:translate-x-1">
+                →
+              </span>
+            </NavLink>
+          </div>
         </div>
-      </SectionShell>
+      </div>
+    ))}
+  </div>
+
+  <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+    <NavLink
+      to="/services"
+      className="inline-flex items-center justify-center rounded-2xl bg-brand-red px-6 py-3 text-sm font-semibold text-white transition hover:opacity-95"
+    >
+      View all services
+    </NavLink>
+    <NavLink
+      to="/contact"
+      className="inline-flex items-center justify-center rounded-2xl bg-white px-6 py-3 text-sm font-semibold text-brand-indigo ring-1 ring-slate-200 transition hover:bg-slate-50"
+    >
+      Request a proposal
+    </NavLink>
+  </div>
+</SectionShell>
 
 
 
